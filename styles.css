@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #6A5ACD, #87CEEB);
+    overflow: hidden;
+}
+
+.card {
+    width: 650px;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, #316999, #E6E6FA) padding-box, linear-gradient(45deg, #FFD700, #FF4500) border-box;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+    animation: rotate 6s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    text-align: left;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+    border: 4px solid black;
+    border-radius: 50%;
+    margin: 20px auto;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.5s;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.photo:hover img {
+    transform: scale(1.2);
+}
+
+.info {
+    margin: 10px 0;
+    color: #333;
+}
+
+.info span {
+    display: block;
+    font-size: 16px;
+}
+
+.info span:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.row div {
+    flex: 1;
+    border: none;
+    padding: 15px;
+    background: linear-gradient(45deg, #87CEFA, #4682B4);
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.row div:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(45deg, #4682B4, #87CEFA);
+}
+
+.row div i {
+    color: black;
+}
+
+.row div.email {
+    word-wrap: break-word;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+audio {
+    margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+    .row {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
